@@ -1,0 +1,149 @@
+.container#diagram {
+	min-height: 376px;
+	.med;
+	padding-right: 42px;
+	padding-left: 42px;
+	h1 {
+		.bold;
+		text-align: center;
+		margin: 0;
+		padding-top: 20px;
+		padding-bottom: 8px;
+	}
+
+	h2 {
+		.med;
+		text-align: center;
+		margin: 0;
+	}
+
+	.row#main {
+		display: flex;
+		flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+		height: 100%;
+    padding: 29px 0;
+	}
+
+	.col {
+		&:first-child {
+			margin-left: auto;
+			svg {
+				margin: 0 0 -328px 0;
+				width: 328px;
+				height: 328px;
+				display: none;
+			}
+			div#circle_diagram {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				background-size: 240px;
+				width: 240px;
+				height: 240px;
+				margin-right: 40px;
+				p {
+					&:first-child {
+						width: 90px;
+						margin-bottom: 6px;
+						font-size: 20px;
+						line-height: 22px;
+					}
+					&:last-child {
+						width: 120px;
+					} 
+				}
+			}
+		}
+		&:last-child {
+			margin-right: auto;
+			width: 304px;
+			min-width: 230px;
+			div.line {
+				width: 100%;
+				height: 2px;
+				margin: 16px 0;
+				opacity: 0.3;
+			}
+			.row {
+				div.circle {
+					height: 16px;
+					min-width: 16px;
+					border-radius: 100%;
+					margin-right: 10px;
+				}
+				& > p {
+					flex: 1 1 auto;
+					text-align: left;
+				}
+				div.commits_value {
+					flex: 1 1 auto;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: flex-end;
+					p {
+						.med;
+						margin-right: 16px;
+						&:last-child {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 667px) {
+  .container#diagram {
+		h1, h2 {
+			text-align: left;
+		}
+		min-height: 610px;
+    padding-right: 24px;
+    padding-left: 24px;
+		.row#main {
+			padding-top: 0;
+			padding-bottom: 24px;
+			flex-direction: column;
+			.col {
+				&:first-child {
+					margin-left: 0;
+					margin-top: auto;
+					margin-bottom: auto;
+					justify-content: center;
+					svg {
+						display: block;
+					}
+					div#circle_diagram {
+						margin-right: 0;
+						background-size: ~'min(100%, 328px)';
+						width: ~'min(90vw, 328px)';
+						height: ~'min(90vw, 328px)';
+						min-height: 250px;
+						min-width: 250px;
+						p {
+							&:first-child {
+								width: 120px;
+								margin-bottom: 8px;
+								.bold;
+							}
+							&:last-child {
+								font-size: 20px;
+								width: 164px;
+								line-height: 22px;
+							} 
+						}
+					}
+				}
+				&:last-child {
+					margin-right: 0;
+					width: 100%;
+					min-width: 230px;
+				}
+			}
+		}
+  }
+}

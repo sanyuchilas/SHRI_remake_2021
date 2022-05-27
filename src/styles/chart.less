@@ -1,0 +1,137 @@
+.container#chart {
+  min-height: 505px;
+  padding-left: 24px;
+  padding-right: 24px;
+  h1 {
+    .bold;
+    text-align: left;
+    padding-top: 20px;
+  }
+  h2 {
+    .med;
+    text-align: left;
+    padding-top: 8px;
+  }
+  img {
+    height: 40px;
+    width: 40px;
+  }
+  .row#main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+  .row#header {
+    height: 75px;
+  }
+  .row#chart_stats {
+    min-height: 100px;
+    margin: 0px -12px 24px -46px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1 1 auto;
+    .col {
+      margin-left: 12px;
+      margin-right: auto;
+      margin-bottom: 0;
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      &.hidden {
+        display: none;
+      }
+      p {
+        .med;
+        &.p_commits {
+          margin-bottom: 8px;
+        }
+        &.p_col {
+          max-height: 32vh;
+          min-height: 8px;
+          margin-bottom: 12px;
+          border-radius: 6px;;
+          flex: 1 1 auto;
+          &.active {
+            max-height: 34vh;
+          }
+        }
+        &.p_day {
+          .light;
+        }
+      }
+    }
+  }
+  .row#chart_leaders {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+    .col {
+      &:first-child {
+        margin-right: 14px;
+      }
+      p {
+        &:first-child {
+          margin-bottom: 4px;
+        }
+        text-align: left;
+        &.valueText {
+          .light;
+          font-size: 14px;
+        }
+        &.name {
+          .med;
+        }
+      }
+    }
+    div.line {
+      margin: 17px 0;
+      height: 2px;
+      opacity: 0.3;
+    }
+  }
+}
+
+@media (min-width: 668px) {
+  .container#chart {
+    min-height: 350px;
+    padding-right: 24px;
+    padding-left: 24px;
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+      padding-bottom: 91px;
+    }
+    .row#chart_stats {
+      padding-top: 0;
+      .col.hidden {
+        display: flex;
+      }
+    }
+    .row#chart_leaders {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      .row {
+        &:first-child {
+          justify-content: center;
+        }
+        flex: 1 1 auto;
+      }
+      div.line {
+        margin: 0 16px;
+        width: 2px;
+        height: 100%;
+        opacity: 0.3;
+      }
+    }
+  }
+}
